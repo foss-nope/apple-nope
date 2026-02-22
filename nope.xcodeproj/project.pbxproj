@@ -33,6 +33,7 @@
 		8550D2C32F4493AD00344716 /* nopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8550D2CD2F4493AE00344716 /* nopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85BAD19A2F4B390B00293C4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85EAC9D82F4B3E1800DF5D95 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -87,6 +88,7 @@
 				8550D2C62F4493AD00344716 /* nopeTests */,
 				8550D2D02F4493AE00344716 /* nopeUITests */,
 				8550D2B72F4493AD00344716 /* Products */,
+				85EAC9D82F4B3E1800DF5D95 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
