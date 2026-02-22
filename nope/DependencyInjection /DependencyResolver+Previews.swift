@@ -5,7 +5,6 @@
 //  Created by Sushant Verma on 17/2/2026.
 //
 
-#if DEBUG
 extension DependencyResolver {
     /// For SwiftUI Preview
     static func forPreview() -> DependencyResolver {
@@ -13,4 +12,3 @@ extension DependencyResolver {
         return resolver
     }
 }
-#endif
