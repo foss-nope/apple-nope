@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-135.210048,252.20473)">
+        <g transform="matrix(300,0,0,300,485.917717,367.168317)">
+        </g>
+        <text x="269.267px" y="367.168px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:300px;">N</text>
+    </g>
+    <g transform="matrix(1.772219,0,0,1.772219,-443.371628,-28.651402)">
+        <g transform="matrix(250,0,0,250,625.027315,394.608911)">
+        </g>
+        <text x="430.569px" y="394.609px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:250px;fill:rgb(255,0,0);">O</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-122.479163,195.511661)">
+        <g transform="matrix(300,0,0,300,820.558052,423.861386)">
+        </g>
+        <text x="620.46px" y="423.861px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:300px;">P</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-139.210048,135.665126)">
+        <g transform="matrix(300,0,0,300,1022.414488,482.707921)">
+        </g>
+        <text x="822.317px" y="482.708px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:300px;">E</text>
+    </g>
+    <g transform="matrix(0.483522,0.59975,-0.778506,0.627637,421.843515,75.21161)">
+        <rect x="302" y="196" width="386" height="35" style="fill:rgb(255,0,0);"/>
+    </g>
+</svg>
