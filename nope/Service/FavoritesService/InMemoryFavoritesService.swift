@@ -7,7 +7,7 @@
 
 import Combine
 
-final class InMemoryFavoritesService: FavoritesService {
+class InMemoryFavoritesService: FavoritesService {
 
     private let logger = AutoLogger.unifiedLogger()
 

@@ -9,7 +9,14 @@
           "glass" : true,
           "hidden" : false,
           "image-name" : "Icon.svg",
-          "name" : "Icon"
+          "name" : "Icon",
+          "position" : {
+            "scale" : 1.2,
+            "translation-in-points" : [
+              20.42895120000003,
+              7.093968600000039
+            ]
+          }
         },
         {
           "blend-mode-specializations" : [
@@ -25,7 +32,14 @@
               "appearance" : "dark",
               "value" : 1
             }
-          ]
+          ],
+          "position" : {
+            "scale" : 0.5,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
         }
       ],
       "shadow" : {

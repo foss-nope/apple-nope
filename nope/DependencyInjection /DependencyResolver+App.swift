@@ -13,7 +13,7 @@ extension DependencyResolver {
             ReasonsService()
         }
         resolver.register(FavoritesService.self, resolved: .singleton) { resolver in
-            InMemoryFavoritesService()
+            DefaultsFavoritesService()
         }
         return resolver
     }
