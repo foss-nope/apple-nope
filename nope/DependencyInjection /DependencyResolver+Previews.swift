@@ -12,6 +12,9 @@ extension DependencyResolver {
         resolver.register(FavoritesService.self, resolved: .singleton) { resolver in
             InMemoryFavoritesService()
         }
+        resolver.register(PasteboardWriting.self, resolved: .singleton) { resolver in
+            InMemoryPasteboard()
+        }
         return resolver
     }
 }

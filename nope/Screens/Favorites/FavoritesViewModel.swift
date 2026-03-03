@@ -16,6 +16,7 @@ class FavoritesViewModel: ObservableObject {
 
     @Published var favorites: [String] = []
     @Published var copied: String? = nil
+    var copyMessageDuration = Duration.seconds(2)
 
     init(_ resolver: DependencyResolver) {
         favoritesService = resolver.resolve()
@@ -26,8 +27,8 @@ class FavoritesViewModel: ObservableObject {
     }
 
     func onAppear() {
-        logger.trace("On appear")
-        favorites = favoritesService.favorites
+        logger.debug("On appear")
+        // nothing to do
     }
 
     func copy(reason: String) {
@@ -40,8 +41,8 @@ class FavoritesViewModel: ObservableObject {
     }
 
     @MainActor
-    func resetCopiedAfterDelay() async {
-        try? await Task.sleep(for: .seconds(2))
+    private func resetCopiedAfterDelay() async {
+        try? await Task.sleep(for: copyMessageDuration)
         copied = nil
     }
 
