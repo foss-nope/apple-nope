@@ -13,6 +13,7 @@ class FavoritesViewModel: ObservableObject {
     private let logger = AutoLogger.unifiedLogger()
 
     private var favoritesService: FavoritesService
+    private var pasteboard: PasteboardWriting
 
     @Published var favorites: [String] = []
     @Published var copied: String? = nil
@@ -20,28 +21,24 @@ class FavoritesViewModel: ObservableObject {
 
     init(_ resolver: DependencyResolver) {
         favoritesService = resolver.resolve()
+        pasteboard = resolver.resolve()
 
         favoritesService.favoritesPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$favorites)
     }
 
-    func onAppear() {
-        logger.debug("On appear")
-        // nothing to do
-    }
-
     func copy(reason: String) {
-        UIPasteboard.general.string = reason
+        pasteboard.string = reason
         copied = reason
 
         Task {
-            await resetCopiedAfterDelay()
+            await resetCopiedMessageAfterDelay()
         }
     }
 
     @MainActor
-    private func resetCopiedAfterDelay() async {
+    private func resetCopiedMessageAfterDelay() async {
         try? await Task.sleep(for: copyMessageDuration)
         copied = nil
     }

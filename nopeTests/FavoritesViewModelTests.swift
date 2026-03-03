@@ -6,8 +6,9 @@
 //
 
 import Testing
-@testable import nope
 import Foundation
+
+@testable import nope
 
 struct FavoritesViewModelTests {
 
@@ -44,13 +45,16 @@ struct FavoritesViewModelTests {
     }
 
     @Test func copiesContent() async throws {
+        let pasteboard: PasteboardWriting = await resolver.resolve()
         let testName = #function
 
+        #expect(pasteboard.string == nil)
         await viewModel.copy(reason: testName)
         #expect(viewModel.copied == testName)
+        #expect(pasteboard.string == testName)
     }
 
-    @Test func copiedContentClearsAfterDopyDelay() async throws {
+    @Test func deletesContent() async throws {
         let favoritesService: FavoritesService = await resolver.resolve()
         await favoritesService.addFavorite(message: "a")
         await favoritesService.addFavorite(message: "b")
@@ -63,7 +67,7 @@ struct FavoritesViewModelTests {
         #expect(viewModel.favorites.count == 2)
     }
 
-    @Test func deletesContent() async throws {
+    @Test func copiedContentClearsAfterCopyDelay() async throws {
         let testName = #function
         let testWait = Duration.milliseconds(10)
         await MainActor.run {

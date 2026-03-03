@@ -21,7 +21,6 @@ struct FavoritesView: View {
         NavigationStack {
             bodyContent
         }
-        .onAppear(perform: viewModel.onAppear)
         .tabItem {
             Label("Favorites", systemImage: "heart")
         }

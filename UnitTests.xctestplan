@@ -18,13 +18,6 @@
         "identifier" : "8550D2C22F4493AD00344716",
         "name" : "nopeTests"
       }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:nope.xcodeproj",
-        "identifier" : "8550D2CC2F4493AE00344716",
-        "name" : "nopeUITests"
-      }
     }
   ],
   "version" : 1

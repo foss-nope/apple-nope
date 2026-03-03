@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SystemPasteboard: PasteboardWriting {
+class SystemPasteboard: PasteboardWriting {
     var string: String? {
         get { UIPasteboard.general.string }
         set { UIPasteboard.general.string = newValue }

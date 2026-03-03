@@ -6,7 +6,7 @@
 //
 
 
-struct InMemoryPasteboard: PasteboardWriting {
+class InMemoryPasteboard: PasteboardWriting {
     var logger = AutoLogger.unifiedLogger()
     var string: String? = nil {
         didSet {
