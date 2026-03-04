@@ -31,6 +31,7 @@ struct NopeApp: App {
             TabView {
                 RandomReasonTabContent(resolver)
                 FavoritesView(resolver)
+                AboutView()
             }
         }
     }
