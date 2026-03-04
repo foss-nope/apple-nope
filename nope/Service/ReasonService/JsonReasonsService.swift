@@ -1,21 +1,20 @@
 //
-//  ReasonsService.swift
+//  JsonReasonsService.swift
 //  nope
 //
-//  Created by Sushant Verma on 17/2/2026.
+//  Created by Sushant Verma on 4/3/2026.
 //
 
 import Foundation
 import Combine
 
-final class ReasonsService: ObservableObject {
-
+class JsonReasonsService: ReasonsService {
     private let logger = AutoLogger.unifiedLogger()
 
-    @Published var reasons: [String] = []
+    var reasons: [String] = []
 
-    init() {
-        if let reasons: [String] = loadJSON("reasons") {
+    init(resourceName: String) {
+        if let reasons: [String] = loadJSON(resourceName) {
             self.reasons = reasons
         }
     }
@@ -25,7 +24,6 @@ final class ReasonsService: ObservableObject {
             logger.error("❌ \(filename).json not found")
             return nil
         }
-
 
         do {
             let data = try Data(contentsOf: url)

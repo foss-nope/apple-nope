@@ -10,7 +10,7 @@ extension DependencyResolver {
     static func forApp() -> DependencyResolver {
         let resolver = DependencyResolver.createEmpty()
         resolver.register(ReasonsService.self, resolved: .singleton) { _ in
-            ReasonsService()
+            JsonReasonsService(resourceName: "reasons")
         }
         resolver.register(FavoritesService.self, resolved: .singleton) { resolver in
             DefaultsFavoritesService()

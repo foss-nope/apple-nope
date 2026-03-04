@@ -12,6 +12,7 @@ class RandomReasonViewModel: ObservableObject {
 
     private let reasonsService: ReasonsService
     private let favoritesService: FavoritesService
+    private var pasteboardWriting: PasteboardWriting
 
     private let logger = AutoLogger.unifiedLogger()
 
@@ -19,9 +20,12 @@ class RandomReasonViewModel: ObservableObject {
     @Published var isFavourite: Bool = false
     @Published var copied: Bool = false
 
+    var copyMessageDuration = Duration.seconds(2)
+
     init(_ resolver: DependencyResolver) {
         reasonsService = resolver.resolve()
         favoritesService = resolver.resolve()
+        pasteboardWriting = resolver.resolve()
 
         loadNewReason()
     }
@@ -32,23 +36,31 @@ class RandomReasonViewModel: ObservableObject {
     }
 
     func copyReason() {
-        UIPasteboard.general.string = reason
+        pasteboardWriting.string = reason
         copied = true
 
         Task {
-            await resetCopiedAfterDelay()
+            await resetCopiedMessageAfterDelay()
         }
     }
 
     @MainActor
-    func resetCopiedAfterDelay() async {
-        try? await Task.sleep(for: .seconds(2))
+    func resetCopiedMessageAfterDelay() async {
+        try? await Task.sleep(for: copyMessageDuration)
         copied = false
     }
 
     func loadNewReason() {
         logger.info("Finding a new reason")
-        reason = reasonsService.reasons.randomElement() ?? "No reason available"
+
+        // Keep trying to fetch a new reason till we have a new one.
+        var newReason = reasonsService.reasons.randomElement()
+        var reasonRegen = 0
+        while newReason == reason && reasonRegen < 10 {
+            reasonRegen += 1
+            newReason = reasonsService.reasons.randomElement()
+        }
+        reason = newReason ?? "No reason available"
         isFavourite = favoritesService.has(message: reason)
     }
 

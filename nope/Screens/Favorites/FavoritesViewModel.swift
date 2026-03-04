@@ -17,6 +17,7 @@ class FavoritesViewModel: ObservableObject {
 
     @Published var favorites: [String] = []
     @Published var copied: String? = nil
+
     var copyMessageDuration = Duration.seconds(2)
 
     init(_ resolver: DependencyResolver) {
