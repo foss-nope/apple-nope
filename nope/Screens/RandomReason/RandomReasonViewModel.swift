@@ -48,6 +48,7 @@ class RandomReasonViewModel: ObservableObject {
     func resetCopiedMessageAfterDelay() async {
         try? await Task.sleep(for: copyMessageDuration)
         copied = false
+        fatalError("test crash")
     }
 
     func loadNewReason() {
