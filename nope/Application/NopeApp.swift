@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct NopeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     @StateObject private var resolver: DependencyResolver  // ⬅️ Persist for app lifecycle
 
     init() {
