@@ -261,6 +261,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		852E35F12F59AFAB009DA599 /* [Firebase] Upload dSYM files to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
