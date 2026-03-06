@@ -10,7 +10,6 @@
 		852E35E62F59AD81009DA599 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E52F59AD81009DA599 /* FirebaseAnalytics */; };
 		852E35E82F59AD81009DA599 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E72F59AD81009DA599 /* FirebaseCrashlytics */; };
 		8550D2E92F4494DB00344716 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8550D2E82F4494DB00344716 /* Swinject */; };
-		85BAD19B2F4B390B00293C4E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 85BAD19A2F4B390B00293C4E /* README.md */; };
 		85EBD69A2F57135E0059E897 /* UnitTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 85EBD6992F57135E0059E897 /* UnitTests.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +35,7 @@
 		8550D2C32F4493AD00344716 /* nopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8550D2CD2F4493AE00344716 /* nopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85BAD19A2F4B390B00293C4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85E732882F5B0EBF00C5BC74 /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		85EAC9D82F4B3E1800DF5D95 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		85EBD6992F57135E0059E897 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +91,7 @@
 			children = (
 				85EBD6992F57135E0059E897 /* UnitTests.xctestplan */,
 				85BAD19A2F4B390B00293C4E /* README.md */,
+				85E732882F5B0EBF00C5BC74 /* PRIVACY.md */,
 				8550D2B82F4493AD00344716 /* nope */,
 				8550D2C62F4493AD00344716 /* nopeTests */,
 				8550D2D02F4493AE00344716 /* nopeUITests */,
@@ -238,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85EBD69A2F57135E0059E897 /* UnitTests.xctestplan in Resources */,
-				85BAD19B2F4B390B00293C4E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
