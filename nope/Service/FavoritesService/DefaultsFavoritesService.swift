@@ -14,8 +14,21 @@ class DefaultsFavoritesService: InMemoryFavoritesService {
 
     private var cancellables: Set<AnyCancellable> = []
 
+    let defaultsSuiteName = "favorites.defaults"
+    let defaultsKey = "DefaultsFavoritesService.favorites"
+
+    private lazy var defaults: UserDefaults = {
+        if let suite = UserDefaults(suiteName: defaultsSuiteName) {
+            return suite
+        } else {
+            logger.error("Unable to create UserDefaults suite '\(self.defaultsSuiteName)'.")
+            fatalError("Unable to create UserDefaults suite '\(self.defaultsSuiteName)'.")
+        }
+    }()
+
     override init() {
         super.init()
+        logger.debug("Created DefaultsFavoritesService: InMemoryFavoritesService")
 
         favorites = readFavorites()
 
@@ -26,14 +39,14 @@ class DefaultsFavoritesService: InMemoryFavoritesService {
     }
 
     private func readFavorites() -> [String] {
-        logger.debug("Reading favorites from UserDefaults")
+        logger.debug("Reading \(self.defaultsKey) from UserDefaults(\(self.defaultsSuiteName))")
 
-        return UserDefaults.standard.stringArray(forKey: "DefaultsFavoritesService.favorites") ?? []
+        return defaults.stringArray(forKey: defaultsKey) ?? []
     }
 
     func write(_ updated: [String]) {
-        logger.debug("Writing favorites to UserDefaults")
-        
-        UserDefaults.standard.set(updated, forKey: "DefaultsFavoritesService.favorites")
+        logger.debug("Writing \(self.defaultsKey) to UserDefaults(\(self.defaultsSuiteName))")
+
+        defaults.set(updated, forKey: defaultsKey)
     }
 }
