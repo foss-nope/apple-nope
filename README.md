@@ -6,6 +6,10 @@ This app is a hommage to [no-as-a-service](https://github.com/hotheadhacker/no-a
 
 Currently the 'reasons' are compiled into the app. A future version may add support for fetching from a remote location.
 
+## AppStore
+
+You can download the latest stable release from the [AppStore](https://apps.apple.com/app/id6759522055). 
+
 ## TestFlight
 
 Development builds of this app are available via [TestFlight public beta](https://testflight.apple.com/join/wwyJk3ca). Use development builds at your own risk!
