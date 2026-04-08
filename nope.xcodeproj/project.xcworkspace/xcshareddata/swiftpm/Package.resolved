@@ -123,8 +123,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/squeaky-nose/SwiftDependencyInjection",
       "state" : {
-        "revision" : "febbc7f5458737a04b01a71f1bf90412f766533e",
-        "version" : "1.0.0"
+        "revision" : "0bc2d469f6473a4a8ec5f12547cf56bfcf66e477",
+        "version" : "1.0.1"
       }
     }
   ],
