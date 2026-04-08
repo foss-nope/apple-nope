@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SwiftDependencyInjection
 
 struct RandomReasonTabContent: View {
-    var resolver: DependencyResolver
+    private var resolver: DependencyContainer
 
-    init(_ resolver: DependencyResolver) {
+    init(_ resolver: DependencyContainer) {
         self.resolver = resolver
     }
 

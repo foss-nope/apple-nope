@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import SwiftDependencyInjection
 
 class FavoritesViewModel: ObservableObject {
 
@@ -20,13 +21,22 @@ class FavoritesViewModel: ObservableObject {
 
     var copyMessageDuration = Duration.seconds(2)
 
-    init(_ resolver: DependencyResolver) {
-        favoritesService = resolver.resolve()
-        pasteboard = resolver.resolve()
+    init(favoritesService: FavoritesService,
+         pasteboard: PasteboardWriting
+    ) {
+        self.favoritesService = favoritesService
+        self.pasteboard = pasteboard
 
         favoritesService.favoritesPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$favorites)
+    }
+
+    convenience init(_ resolver: DependencyContainer) {
+        self.init(
+            favoritesService: resolver.resolveRequired(),
+            pasteboard: resolver.resolveRequired()
+        )
     }
 
     func copy(reason: String) {

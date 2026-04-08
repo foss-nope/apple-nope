@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		852E35E62F59AD81009DA599 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E52F59AD81009DA599 /* FirebaseAnalytics */; };
 		852E35E82F59AD81009DA599 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E72F59AD81009DA599 /* FirebaseCrashlytics */; };
-		8550D2E92F4494DB00344716 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8550D2E82F4494DB00344716 /* Swinject */; };
+		8592ABFD2F869E28003A7310 /* SwiftDependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */; };
 		85EBD69A2F57135E0059E897 /* UnitTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 85EBD6992F57135E0059E897 /* UnitTests.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +64,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				852E35E82F59AD81009DA599 /* FirebaseCrashlytics in Frameworks */,
+				8592ABFD2F869E28003A7310 /* SwiftDependencyInjection in Frameworks */,
 				852E35E62F59AD81009DA599 /* FirebaseAnalytics in Frameworks */,
-				8550D2E92F4494DB00344716 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +97,7 @@
 				8550D2D02F4493AE00344716 /* nopeUITests */,
 				8550D2B72F4493AD00344716 /* Products */,
 				85EAC9D82F4B3E1800DF5D95 /* LICENSE */,
+				85F9C8B72F855C4200678BD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +109,13 @@
 				8550D2CD2F4493AE00344716 /* nopeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		85F9C8B72F855C4200678BD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +139,9 @@
 			);
 			name = nope;
 			packageProductDependencies = (
-				8550D2E82F4494DB00344716 /* Swinject */,
 				852E35E52F59AD81009DA599 /* FirebaseAnalytics */,
 				852E35E72F59AD81009DA599 /* FirebaseCrashlytics */,
+				8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */,
 			);
 			productName = nope;
 			productReference = 8550D2B62F4493AD00344716 /* nope.app */;
@@ -218,8 +226,8 @@
 			mainGroup = 8550D2AD2F4493AD00344716;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8550D2E72F4494DB00344716 /* XCRemoteSwiftPackageReference "Swinject" */,
 				852E35E42F59AD81009DA599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8550D2B72F4493AD00344716 /* Products */;
@@ -653,12 +661,12 @@
 				minimumVersion = 12.10.0;
 			};
 		};
-		8550D2E72F4494DB00344716 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject";
+			repositoryURL = "https://github.com/squeaky-nose/SwiftDependencyInjection";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.10.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -674,10 +682,10 @@
 			package = 852E35E42F59AD81009DA599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		8550D2E82F4494DB00344716 /* Swinject */ = {
+		8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8550D2E72F4494DB00344716 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
+			package = 8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */;
+			productName = SwiftDependencyInjection;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

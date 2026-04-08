@@ -6,26 +6,24 @@
 //
 
 import SwiftUI
+import SwiftDependencyInjection
 
 @main
 struct NopeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    @StateObject private var resolver: DependencyResolver  // ⬅️ Persist for app lifecycle
+    private let resolver: DependencyContainer  // ⬅️ Persist for app lifecycle
 
     init() {
         let isRunningXcodePreviews = ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
         let isRunningUITest = ProcessInfo.processInfo.environment["CUSTOM_RUNNING_UI_TEST"] == "1"
-        let resolver: DependencyResolver
         if isRunningXcodePreviews {
-            resolver = DependencyResolver.forPreview()
+            resolver = DependencyContainer.forPreview()
         } else if isRunningUITest {
-            resolver = DependencyResolver.forUITests()
+            resolver = DependencyContainer.forUITests()
         } else {
-            resolver = DependencyResolver.forApp()
+            resolver = DependencyContainer.forApp()
         }
-
-        _resolver = .init(wrappedValue: resolver)
     }
 
     var body: some Scene {

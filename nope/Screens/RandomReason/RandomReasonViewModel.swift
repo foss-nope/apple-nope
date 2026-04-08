@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import SwiftDependencyInjection
 
 class RandomReasonViewModel: ObservableObject {
 
@@ -22,12 +23,23 @@ class RandomReasonViewModel: ObservableObject {
 
     var copyMessageDuration = Duration.seconds(2)
 
-    init(_ resolver: DependencyResolver) {
-        reasonsService = resolver.resolve()
-        favoritesService = resolver.resolve()
-        pasteboardWriting = resolver.resolve()
+    init(reasonsService: ReasonsService,
+         favoritesService: FavoritesService,
+         pasteboardWriting: PasteboardWriting
+    ) {
+        self.reasonsService = reasonsService
+        self.favoritesService = favoritesService
+        self.pasteboardWriting = pasteboardWriting
 
         loadNewReason()
+    }
+
+    convenience init(_ resolver: DependencyContainer) {
+        self.init(
+            reasonsService: resolver.resolveRequired(),
+            favoritesService: resolver.resolveRequired(),
+            pasteboardWriting: resolver.resolveRequired()
+        )
     }
 
     func onAppear() {

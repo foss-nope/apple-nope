@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftDependencyInjection
 
 struct FavoritesView: View {
-    var resolver: DependencyResolver
+    var resolver: DependencyContainer
 
     @StateObject var viewModel: FavoritesViewModel
 
-    init(_ resolver: DependencyResolver) {
+    init(_ resolver: DependencyContainer) {
         self.resolver = resolver
         _viewModel = .init(wrappedValue: .init(resolver))
     }

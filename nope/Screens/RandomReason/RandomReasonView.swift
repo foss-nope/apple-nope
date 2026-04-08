@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftDependencyInjection
 
 struct RandomReasonView: View {
-    var resolver: DependencyResolver
+    private var resolver: DependencyContainer
 
     @StateObject var viewModel: RandomReasonViewModel
 
-    init(_ resolver: DependencyResolver) {
+    init(_ resolver: DependencyContainer) {
         self.resolver = resolver
         _viewModel = .init(wrappedValue: .init(resolver))
     }
