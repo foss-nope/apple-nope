@@ -7,29 +7,31 @@
 
 import Testing
 import Foundation
+import SwiftDependencyInjection
+import UIKit
 
 @testable import nope
 
 struct FavoritesViewModelTests {
 
-    var resolver: DependencyResolver
+    var resolver: DependencyContainer
 
     var viewModel: FavoritesViewModel
 
     init() {
-        self.resolver = DependencyResolver.forPreview()
+        self.resolver = DependencyContainer.forPreview()
         self.viewModel = FavoritesViewModel(resolver)
     }
 
     @Test func hasNoFavorites() async throws {
-        let favoritesService: FavoritesService = await resolver.resolve()
+        let favoritesService: FavoritesService = resolver.resolveRequired()
 
         #expect(favoritesService.favorites.isEmpty)
         #expect(viewModel.favorites.isEmpty)
     }
 
     @Test func updatesWhenFavoritesChange() async throws {
-        let favoritesService: FavoritesService = await resolver.resolve()
+        let favoritesService: FavoritesService = resolver.resolveRequired()
         await favoritesService.addFavorite(message: #function)
 
         #expect(favoritesService.favorites.count == 1)
@@ -45,7 +47,7 @@ struct FavoritesViewModelTests {
     }
 
     @Test func copiesContent() async throws {
-        let pasteboard: PasteboardWriting = await resolver.resolve()
+        let pasteboard: UIPasteboard = resolver.resolveRequired()
         let testName = #function
 
         #expect(pasteboard.string == nil)
@@ -55,7 +57,7 @@ struct FavoritesViewModelTests {
     }
 
     @Test func deletesContent() async throws {
-        let favoritesService: FavoritesService = await resolver.resolve()
+        let favoritesService: FavoritesService = resolver.resolveRequired()
         await favoritesService.addFavorite(message: "a")
         await favoritesService.addFavorite(message: "b")
         await favoritesService.addFavorite(message: "c")

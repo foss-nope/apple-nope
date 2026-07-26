@@ -7,12 +7,14 @@
 
 import Testing
 import Foundation
+import SwiftDependencyInjection
+import UIKit
 
 @testable import nope
 
 struct RandomReasonViewModelTests {
 
-    var resolver: DependencyResolver
+    var resolver: DependencyContainer
 
     var stubReasonsService: StubReasonsService
 
@@ -23,8 +25,8 @@ struct RandomReasonViewModelTests {
             "Reason 1",
             "Reason 2"
         ])
-        self.resolver = DependencyResolver.forPreview()
-        resolver.register(ReasonsService.self, resolved: .singleton) { _ in
+        self.resolver = DependencyContainer.forPreview()
+        resolver.register(ReasonsService.self, registration: .singleton) {
             stubReasonsService
         }
         self.stubReasonsService = stubReasonsService
@@ -37,7 +39,7 @@ struct RandomReasonViewModelTests {
     }
 
     @Test func copyAction() async throws {
-        let pasteboard: PasteboardWriting = await resolver.resolve()
+        let pasteboard: UIPasteboard = resolver.resolveRequired()
 
         #expect(viewModel.copied == false)
         #expect(pasteboard.string == nil)
@@ -52,7 +54,7 @@ struct RandomReasonViewModelTests {
             viewModel.copyMessageDuration = testWait
         }
 
-        let pasteboard: PasteboardWriting = await resolver.resolve()
+        let pasteboard: UIPasteboard = resolver.resolveRequired()
 
         #expect(viewModel.copyMessageDuration == .milliseconds(10))
 

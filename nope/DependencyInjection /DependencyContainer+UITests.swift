@@ -6,6 +6,7 @@
 //
 
 import SwiftDependencyInjection
+import UIKit
 
 extension DependencyContainer {
     /// For Automated UITests
@@ -13,6 +14,9 @@ extension DependencyContainer {
         let resolver = DependencyContainer.forApp()
         resolver.register(FavoritesService.self, registration: .singleton) {
             InMemoryFavoritesService()
+        }
+        resolver.register(UIPasteboard.self, registration: .singleton) {
+            UIPasteboard.withUniqueName()
         }
         return resolver
     }

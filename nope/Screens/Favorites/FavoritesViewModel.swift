@@ -14,7 +14,7 @@ class FavoritesViewModel: ObservableObject {
     private let logger = AutoLogger.unifiedLogger()
 
     private var favoritesService: FavoritesService
-    private var pasteboard: PasteboardWriting
+    private var pasteboard: UIPasteboard
 
     @Published var favorites: [String] = []
     @Published var copied: String? = nil
@@ -22,7 +22,7 @@ class FavoritesViewModel: ObservableObject {
     var copyMessageDuration = Duration.seconds(2)
 
     init(favoritesService: FavoritesService,
-         pasteboard: PasteboardWriting
+         pasteboard: UIPasteboard
     ) {
         self.favoritesService = favoritesService
         self.pasteboard = pasteboard

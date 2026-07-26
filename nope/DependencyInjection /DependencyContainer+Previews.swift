@@ -14,9 +14,6 @@ extension DependencyContainer {
         resolver.register(FavoritesService.self, registration: .singleton) {
             InMemoryFavoritesService()
         }
-        resolver.register(PasteboardWriting.self, registration: .singleton) {
-            InMemoryPasteboard()
-        }
         return resolver
     }
 }

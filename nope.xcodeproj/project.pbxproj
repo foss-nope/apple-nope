@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		852E35E62F59AD81009DA599 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E52F59AD81009DA599 /* FirebaseAnalytics */; };
 		852E35E82F59AD81009DA599 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 852E35E72F59AD81009DA599 /* FirebaseCrashlytics */; };
+		853A9C842F8B82CC00266218 /* SwiftDependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 853A9C832F8B82CC00266218 /* SwiftDependencyInjection */; };
+		8565FE0A3016523500C2FC1C /* UtilityKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8565FE093016523500C2FC1C /* UtilityKit */; };
 		8592ABFD2F869E28003A7310 /* SwiftDependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */; };
 		85EBD69A2F57135E0059E897 /* UnitTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 85EBD6992F57135E0059E897 /* UnitTests.xctestplan */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,7 @@
 			files = (
 				852E35E82F59AD81009DA599 /* FirebaseCrashlytics in Frameworks */,
 				8592ABFD2F869E28003A7310 /* SwiftDependencyInjection in Frameworks */,
+				8565FE0A3016523500C2FC1C /* UtilityKit in Frameworks */,
 				852E35E62F59AD81009DA599 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853A9C842F8B82CC00266218 /* SwiftDependencyInjection in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +146,7 @@
 				852E35E52F59AD81009DA599 /* FirebaseAnalytics */,
 				852E35E72F59AD81009DA599 /* FirebaseCrashlytics */,
 				8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */,
+				8565FE093016523500C2FC1C /* UtilityKit */,
 			);
 			productName = nope;
 			productReference = 8550D2B62F4493AD00344716 /* nope.app */;
@@ -165,6 +170,7 @@
 			);
 			name = nopeTests;
 			packageProductDependencies = (
+				853A9C832F8B82CC00266218 /* SwiftDependencyInjection */,
 			);
 			productName = nopeTests;
 			productReference = 8550D2C32F4493AD00344716 /* nopeTests.xctest */;
@@ -228,6 +234,7 @@
 			packageReferences = (
 				852E35E42F59AD81009DA599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */,
+				8565FE083016523500C2FC1C /* XCRemoteSwiftPackageReference "UtilityKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8550D2B72F4493AD00344716 /* Products */;
@@ -661,6 +668,14 @@
 				minimumVersion = 12.10.0;
 			};
 		};
+		8565FE083016523500C2FC1C /* XCRemoteSwiftPackageReference "UtilityKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/squeaky-nose/UtilityKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/squeaky-nose/SwiftDependencyInjection";
@@ -681,6 +696,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 852E35E42F59AD81009DA599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		853A9C832F8B82CC00266218 /* SwiftDependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8592ABFB2F869DE6003A7310 /* XCRemoteSwiftPackageReference "SwiftDependencyInjection" */;
+			productName = SwiftDependencyInjection;
+		};
+		8565FE093016523500C2FC1C /* UtilityKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8565FE083016523500C2FC1C /* XCRemoteSwiftPackageReference "UtilityKit" */;
+			productName = UtilityKit;
 		};
 		8592ABFC2F869E28003A7310 /* SwiftDependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;

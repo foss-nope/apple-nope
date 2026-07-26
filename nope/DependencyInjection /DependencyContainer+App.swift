@@ -6,19 +6,20 @@
 //
 
 import SwiftDependencyInjection
+import UIKit
 
 extension DependencyContainer {
     /// For the app
     static func forApp() -> DependencyContainer {
         let resolver = DependencyContainer()
         resolver.register(ReasonsService.self, registration: .singleton) {
-            JsonReasonsService(resourceName: "reasons")
+            JsonReasonsService()
         }
         resolver.register(FavoritesService.self, registration: .singleton) {
             DefaultsFavoritesService()
         }
-        resolver.register(PasteboardWriting.self, registration: .singleton) {
-            SystemPasteboard()
+        resolver.register(UIPasteboard.self, registration: .singleton) {
+            UIPasteboard.general
         }
         return resolver
     }

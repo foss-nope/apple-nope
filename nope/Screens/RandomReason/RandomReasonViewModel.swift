@@ -13,7 +13,7 @@ class RandomReasonViewModel: ObservableObject {
 
     private let reasonsService: ReasonsService
     private let favoritesService: FavoritesService
-    private var pasteboardWriting: PasteboardWriting
+    private var pasteboard: UIPasteboard
 
     private let logger = AutoLogger.unifiedLogger()
 
@@ -25,11 +25,11 @@ class RandomReasonViewModel: ObservableObject {
 
     init(reasonsService: ReasonsService,
          favoritesService: FavoritesService,
-         pasteboardWriting: PasteboardWriting
+         pasteboard: UIPasteboard
     ) {
         self.reasonsService = reasonsService
         self.favoritesService = favoritesService
-        self.pasteboardWriting = pasteboardWriting
+        self.pasteboard = pasteboard
 
         loadNewReason()
     }
@@ -38,7 +38,7 @@ class RandomReasonViewModel: ObservableObject {
         self.init(
             reasonsService: resolver.resolveRequired(),
             favoritesService: resolver.resolveRequired(),
-            pasteboardWriting: resolver.resolveRequired()
+            pasteboard: resolver.resolveRequired()
         )
     }
 
@@ -48,7 +48,7 @@ class RandomReasonViewModel: ObservableObject {
     }
 
     func copyReason() {
-        pasteboardWriting.string = reason
+        pasteboard.string = reason
         copied = true
 
         Task {

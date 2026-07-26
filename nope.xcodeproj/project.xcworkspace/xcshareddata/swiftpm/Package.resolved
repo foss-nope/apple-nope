@@ -1,5 +1,5 @@
 {
-  "originHash" : "9e490ad87c3a22f63a8f2c7efd0d7149c954244f400ab386a1024833a7f8dfd7",
+  "originHash" : "3d3342774f1cfdac43bb80309ac9fecda5c93646d82f704c749d65e082dc8079",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -125,6 +125,15 @@
       "state" : {
         "revision" : "0bc2d469f6473a4a8ec5f12547cf56bfcf66e477",
         "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "utilitykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/squeaky-nose/UtilityKit",
+      "state" : {
+        "revision" : "6ac663010447fdb83fc49de1d83ec9d60fb757b2",
+        "version" : "1.0.0"
       }
     }
   ],
